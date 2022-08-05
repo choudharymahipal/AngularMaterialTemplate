@@ -50,10 +50,22 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { LoginComponent } from './shared/components/login/login.component';
+import { AccessDeniedComponent } from './shared/components/access-denied/access-denied.component';
+import { DashboardComponent } from './main_components/dashboard/dashboard.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { AuthService } from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent,
+    AccessDeniedComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -105,9 +117,10 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatTreeModule,
     OverlayModule,
     PortalModule,
-    ScrollingModule
+    ScrollingModule,
+    LayoutModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
