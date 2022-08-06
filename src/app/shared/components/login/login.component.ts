@@ -40,9 +40,17 @@ export class LoginComponent implements OnInit {
 
   public onSubmit(): void {
     debugger
-    this.loginValid = true;
-    this._authService.isAuthenticated = true;
-    this._router.navigateByUrl('/dashboard');
+    let username=this.loginForm.get("username")?.value;
+    let password=this.loginForm.get("password")?.value;
+    if(username ==="test" && password ==="test"){
+      this.loginValid = true;
+      this._authService.isAuthenticated = true;
+      this._router.navigateByUrl('/dashboard');
+    }else{
+      this.loginValid = false;
+      this._authService.isAuthenticated = false;
+    }
+    
 
   }
 
