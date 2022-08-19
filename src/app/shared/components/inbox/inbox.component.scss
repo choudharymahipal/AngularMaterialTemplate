@@ -18,6 +18,29 @@
 }
 
 .dashboard-card-content {
-    text-align: center;
+    //text-align: center;
 }
 //End Card CSS
+
+.example-card {
+    max-width: auto;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.example-header-image {
+    background-image: url("https://i.stack.imgur.com/OGGCY.jpg?s=256&g=1");
+    background-size: cover;
+}
+.timerIcon {
+    font-size: 15px;
+    vertical-align: -webkit-baseline-middle;
+    color: rgba(0, 0, 0, 0.54);
+    width: 17px;
+}
+
+.HoverMe:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
