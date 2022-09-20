@@ -17,9 +17,9 @@
     right: 10px;
 }
 
-.dashboard-card-content {
-    //text-align: center;
-}
+// .dashboard-card-content {
+//     //text-align: center;
+// }
 //End Card CSS
 
 .example-card {
@@ -34,6 +34,14 @@
     background-image: url("https://i.stack.imgur.com/OGGCY.jpg?s=256&g=1");
     background-size: cover;
 }
+.example-header-image1 {
+    background-image: url("https://randomuser.me/api/portraits/thumb/lego/1.jpg");
+    background-size: cover;
+}
+.example-header-image2 {
+    background-image: url("https://randomuser.me/api/portraits/thumb/lego/2.jpg");
+    background-size: cover;
+}
 .timerIcon {
     font-size: 15px;
     vertical-align: -webkit-baseline-middle;
@@ -43,4 +51,68 @@
 
 .HoverMe:hover {
     background: rgba(0, 0, 0, 0.04);
+}
+
+//New Chat
+.message__ts {
+    margin: 0.5rem;
+    height: 1em;
+    color: darkgrey;
+}
+
+.message.right {
+    flex-flow: row-reverse;
+}
+
+.message {
+    margin: 0.8rem 0;
+    height: 2em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.message__body {
+    height: 2em;
+}
+.chatList {
+    //background-color: whitesmoke;
+    padding: 1rem;
+    overflow-y: scroll;
+    height: 150px;
+    scroll-behavior: smooth;
+}
+
+.sendButton {
+    //padding: 0 1rem 0 1rem;
+    width: 100%;
+}
+
+.chatText {
+    //border-radius: 5px;
+    border-radius: 30px;
+    padding: 0.5rem;
+    background: #3f51b5;
+    color: whitesmoke;
+}
+.chatContainer {
+    margin: 1rem;
+}
+
+.input {
+    width: 100%;
+    input {
+        width: 100%;
+    }
+}
+
+.subTitle {
+    margin-bottom: 0px !important;
+}
+
+.colorGreen {
+    color: green;
+}
+
+.colorRed{
+    color:red;
 }

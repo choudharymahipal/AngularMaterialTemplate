@@ -6,14 +6,7 @@
             <mat-card class="dashboard-card">
                 <mat-card-header>
                     <mat-card-title>
-                        Card 1
-                        <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                            <mat-icon>more_vert</mat-icon>
-                        </button>
-                        <mat-menu #menu="matMenu" xPosition="before">
-                            <button mat-menu-item>Expand</button>
-                            <button mat-menu-item>Remove</button>
-                        </mat-menu>
+                        All users
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content class="dashboard-card-content">
@@ -23,7 +16,7 @@
                         <mat-card-header>
                             <div mat-card-avatar class="example-header-image"></div>
                             <mat-card-title>Mahipal Choudhary</mat-card-title>
-                            <mat-card-subtitle>
+                            <mat-card-subtitle class="subTitle">
                                 <div>Call me whenever you can..</div>
                                 <div>
                                     <mat-icon class="timerIcon" color="primary">schedule</mat-icon>4 hours ago
@@ -35,9 +28,9 @@
                     <!-- Message User 2 -->
                     <mat-card class="example-card cursorPointer HoverMe">
                         <mat-card-header>
-                            <div mat-card-avatar class="example-header-image"></div>
-                            <mat-card-title>Mahipal Choudhary</mat-card-title>
-                            <mat-card-subtitle>
+                            <div mat-card-avatar class="example-header-image1"></div>
+                            <mat-card-title>Alex</mat-card-title>
+                            <mat-card-subtitle class="subTitle">
                                 <div>Call me whenever you can..</div>
                                 <div>
                                     <mat-icon class="timerIcon" color="primary">schedule</mat-icon>4 hours ago
@@ -46,28 +39,150 @@
                         </mat-card-header>
                     </mat-card>
 
+                    <!-- Message User 3 -->
+                    <mat-card class="example-card cursorPointer HoverMe">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image2"></div>
+                            <mat-card-title>Ishan Sharma</mat-card-title>
+                            <mat-card-subtitle class="subTitle">
+                                <div>Call me whenever you can..</div>
+                                <div>
+                                    <mat-icon class="timerIcon" color="primary">schedule</mat-icon>4 hours ago
+                                </div>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
 
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
 
         <!-- Card2 -->
-        <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-grid-tile [colspan]="2" style="height:500px">
             <mat-card class="dashboard-card">
                 <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>
-                        Card 2
+                        Mahipal Choudhary
                         <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                             <mat-icon>more_vert</mat-icon>
                         </button>
                         <mat-menu #menu="matMenu" xPosition="before">
-                            <button mat-menu-item>Expand</button>
-                            <button mat-menu-item>Remove</button>
+                            <button mat-menu-item>View contact</button>
+                            <button mat-menu-item>Search</button>
+                            <button mat-menu-item>Mute notifications</button>
+                            <button mat-menu-item>Block</button>
+                            <button mat-menu-item>Report</button>
+                            <button mat-menu-item>Clear Chat</button>
                         </mat-menu>
                     </mat-card-title>
+                    <mat-card-subtitle class="subTitle" *ngIf="IamOnline">
+                        <mat-icon class="timerIcon colorGreen">fiber_manual_record</mat-icon> Online
+                    </mat-card-subtitle>
+                    <mat-card-subtitle class="subTitle" *ngIf="!IamOnline">
+                        <mat-icon class="timerIcon colorRed">fiber_manual_record</mat-icon> Offline
+                    </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content class="dashboard-card-content">
-                    <div>Card Content Here</div>
+                    <mat-divider></mat-divider>
+                    <div class="chatContainer">
+                        <div class="chatList" #scrollMe>
+                            <div>
+                                <div class="message right">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">Hello</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:37 </small></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="message left">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">Hi</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:37 </small></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="message right">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">Good Morning!!</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:37 </small></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="message left">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">Very good morning</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:40 </small></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="message right">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">How are you??</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:37 </small></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="message left">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">I am good</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:40 </small></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="message left">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">What about you??</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:37 </small></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="message right">
+                                    <div class="message__body">
+                                        <mat-chip-list>
+                                            <mat-chip color="primary">Great!</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                    <div class="message__ts"><small> 00:10:40 </small></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="sendButton">
+                            <mat-divider></mat-divider>
+                            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                <mat-form-field class="input">
+                                    <input matInput placeholder="Message" formControlName="input" type="text">
+                                    <mat-icon class="cursorPointer" (click)="onSubmit()" matSuffix>send</mat-icon>
+
+                                </mat-form-field>
+                            </form>
+
+                        </div>
+
+                    </div>
+
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
